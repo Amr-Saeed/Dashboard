@@ -1,116 +1,122 @@
-# Responsive Dashboard Frontend
+# Dashboard Frontend Internship Task
 
-A React + Bootstrap dashboard application built for the internship task. The app includes a Figma-inspired login flow, dashboard overview, list page, details page, REST API integration, and Docker deployment support.
+This project is a responsive frontend dashboard built with React, Bootstrap, Recharts, Docker, and a mock REST API. It includes a login page, dashboard page, list page, and details page.
 
-## Live Project Scope
-
-- Login page with demo authentication flow
-- Dashboard page with KPI cards, activity charts, schedule, and store summaries
-- Product list page with search and detail navigation
-- Product details page with summary and performance metrics
-- Responsive layout for desktop, tablet, and mobile
-- Mock REST API using `json-server`
-- Dockerized frontend and API services
-
-## Tech Stack
-
-- React 19
-- React Router
-- Bootstrap 5
-- Vite
-- JSON Server
-- Docker and Docker Compose
-
-## Project Structure
-
-```text
-src/
-  components/    reusable UI building blocks
-  context/       auth state provider
-  pages/         route-level screens
-  services/      API request layer
-public/mock/     mock REST API database
-```
-
-## Demo Credentials
-
-- Email: `amira@example.com`
-- Password: `123456`
-
-## Run Locally
+## How To Run Locally
 
 1. Install dependencies:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-2. Start the React app:
+2. Start the React development server:
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
-3. Start the mock API in a separate terminal:
+3. In a second terminal, start the mock API from the project root:
 
-   ```bash
-   npx json-server --watch public/mock/db.json --port 3001
-   ```
+```bash
+npx json-server public/mock/db.json --port 3001
+```
 
-4. Open:
-
-   - Frontend: `http://localhost:5173`
-   - Mock API: `http://localhost:3001`
-
-If needed, create a `.env` file with:
+4. Create a `.env` file in the project root if you want the frontend to call the local API directly:
 
 ```bash
 VITE_API_BASE_URL=http://localhost:3001
 ```
 
-## Docker
+5. Open the app in the browser:
 
-Run the app and mock API together:
-
-```bash
-docker compose up --build
-```
-
-Services:
-
-- Frontend: `http://localhost:3000`
+- Frontend: `http://localhost:5173`
 - Mock API: `http://localhost:3001`
 
-## Build For Production
+## Demo Account
+
+- Email: `amr@example.com`
+- Password: `123456`
+
+## How To Build
+
+Build the production version with:
 
 ```bash
 npm run build
 ```
 
-The production bundle is generated in `dist/`.
+The final production files are generated in the `dist/` folder.
 
-## Deployment Notes
+## How To Run With Docker
 
-You can deploy this project in two common ways:
+Run the frontend and mock API together with:
 
-### Vercel / Netlify
+```bash
+docker compose up --build
+```
 
-- Deploy the frontend from this repository
-- Point the frontend to a hosted API by setting `VITE_API_BASE_URL`
-- Host the mock API separately if you want the exact same demo backend online
+Then open:
 
-### VM / Cloud Instance
+- Frontend: `http://localhost:3000`
+- Mock API: `http://localhost:3001`
 
-- Provision a small free-tier Linux VM on AWS or GCP
-- Install Docker and Docker Compose
-- Clone the repository
-- Run `docker compose up --build -d`
-- Expose port `3000` publicly
+## How To Deploy
 
-## Video Walkthrough Checklist
+### Vercel or Netlify
 
-- Show the login page and demo credentials
-- Walk through the dashboard, list page, and details page
-- Explain the `components`, `pages`, `context`, and `services` folders
-- Show the Docker setup running with `docker compose up --build`
-- Open the deployed public URL and test the main flows
+1. Push the project to GitHub.
+2. Import the repository into Vercel or Netlify.
+3. Set the build command to:
+
+```bash
+npm run build
+```
+
+4. Set the output directory to:
+
+```bash
+dist
+```
+
+5. If using an external backend, set:
+
+```bash
+VITE_API_BASE_URL=your-api-url
+```
+
+### AWS or GCP
+
+1. Create a small VM.
+2. Install Docker and Docker Compose.
+3. Clone the repository.
+4. Run:
+
+```bash
+docker compose up --build -d
+```
+
+5. Expose the frontend port publicly.
+
+## Short Explanation Of Structure
+
+```text
+src/
+  components/   reusable UI parts such as sidebar and layout
+  context/      global auth and theme logic
+  pages/        main pages like Login, Dashboard, List, and Details
+  services/     API calls and data fetching logic
+
+public/mock/
+  db.json       mock REST API data used by json-server
+```
+
+## Main Technologies Used
+
+- React
+- Bootstrap
+- Recharts
+- Vite
+- JSON Server
+- Docker
+- Docker Compose
