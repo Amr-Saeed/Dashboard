@@ -1,0 +1,19 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - mock-api
+    environment:
+      VITE_API_BASE_URL: /api
+
+  mock-api:
+    image: clue/json-server:latest
+    command: --host 0.0.0.0 --port 3001 --watch /data/db.json
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./public/mock:/data

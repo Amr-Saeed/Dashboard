@@ -1,0 +1,105 @@
+{
+  "dashboard": {
+    "lastUpdated": "May 5, 2026",
+    "metrics": [
+      { "label": "Gross Revenue", "value": "$2,480.32", "change": "+4.23%", "tone": "success" },
+      { "label": "Average Order", "value": "$320.21", "change": "+3.03%", "tone": "success" },
+      { "label": "Total Orders", "value": "$1,899.49", "change": "-0.33%", "tone": "danger" },
+      { "label": "Net Margin", "value": "29.14%", "change": "+1.82%", "tone": "success" }
+    ],
+    "activity": [
+      { "month": "Jan", "orders": 38, "revenue": 52 },
+      { "month": "Feb", "orders": 42, "revenue": 60 },
+      { "month": "Mar", "orders": 55, "revenue": 68 },
+      { "month": "Apr", "orders": 62, "revenue": 72 },
+      { "month": "May", "orders": 58, "revenue": 76 },
+      { "month": "Jun", "orders": 74, "revenue": 82 },
+      { "month": "Jul", "orders": 67, "revenue": 73 },
+      { "month": "Aug", "orders": 54, "revenue": 64 },
+      { "month": "Sep", "orders": 61, "revenue": 70 },
+      { "month": "Oct", "orders": 66, "revenue": 77 },
+      { "month": "Nov", "orders": 70, "revenue": 79 },
+      { "month": "Dec", "orders": 72, "revenue": 86 }
+    ],
+    "schedule": [
+      { "type": "Product Design", "title": "Meeting with Arthur Bell", "time": "09:00 - 09:45 UTC", "badgeClass": "text-bg-primary" },
+      { "type": "Marketing Business", "title": "Meeting with Leslie Perez", "time": "10:00 - 10:45 UTC", "badgeClass": "text-bg-success" },
+      { "type": "Brainstorming", "title": "Growth review with team", "time": "12:00 - 12:45 UTC", "badgeClass": "text-bg-danger" }
+    ],
+    "heatmap": [1,2,1,3,2,4,1,2,2,2,3,2,5,3,6,4,2,1,3,4,5,8,6,4,2,1,2,2,4,6,9,8,4,2,1,1],
+    "stores": [
+      { "name": "New York Store", "performance": "Performance seller 78%", "score": "+12%" },
+      { "name": "Los Angeles Store", "performance": "Performance seller 76%", "score": "+9%" },
+      { "name": "Chicago Store", "performance": "Performance seller 74%", "score": "+8%" },
+      { "name": "Houston Store", "performance": "Performance seller 72%", "score": "+6%" }
+    ],
+    "productsPreview": [
+      { "id": "1", "name": "Urban Anderson Red", "revenue": "$240.32", "sales": "1,986", "reviews": "2,102", "views": "3,032", "stock": "In Stock", "active": true, "swatch": "linear-gradient(135deg, #1b2c56, #ff6285)" },
+      { "id": "2", "name": "Ava Reynolds Blue", "revenue": "$240.32", "sales": "1,986", "reviews": "2,102", "views": "3,032", "stock": "In Stock", "active": true, "swatch": "linear-gradient(135deg, #0f6ad8, #9fd9ff)" },
+      { "id": "3", "name": "Jackson White Blue", "revenue": "$240.32", "sales": "1,986", "reviews": "2,102", "views": "3,032", "stock": "In Stock", "active": true, "swatch": "linear-gradient(135deg, #96c8f8, #2557a5)" },
+      { "id": "4", "name": "Ember Reynolds Blue", "revenue": "$240.32", "sales": "1,986", "reviews": "2,102", "views": "3,032", "stock": "In Stock", "active": true, "swatch": "linear-gradient(135deg, #74b3a5, #2c8075)" },
+      { "id": "5", "name": "Ruby Reynolds Blue", "revenue": "$240.32", "sales": "1,986", "reviews": "2,102", "views": "3,032", "stock": "In Stock", "active": true, "swatch": "linear-gradient(135deg, #0f6ad8, #1e2d52)" }
+    ],
+    "conversion": [
+      { "label": "Product Views", "rate": "29%", "value": "6,575" },
+      { "label": "Add to Cart", "rate": "29%", "value": "6,575" },
+      { "label": "Checkout Initiated", "rate": "29%", "value": "6,575" },
+      { "label": "Completed Purchases", "rate": "29%", "value": "6,575" },
+      { "label": "Completed Purchases", "rate": "29%", "value": "6,575" }
+    ]
+  },
+  "products": [
+    {
+      "id": "1",
+      "name": "Urban Motion Sneaker",
+      "category": "Footwear",
+      "revenue": "$240.32",
+      "reviews": "2,102",
+      "sellThrough": "71%",
+      "location": "New York",
+      "active": true,
+      "swatch": "linear-gradient(135deg, #1b2c56, #5ea3ff)",
+      "description": "A lightweight everyday sneaker designed for commuters and casual wear with a breathable upper and supportive foam base.",
+      "highlights": ["Top seller for spring campaigns", "High conversion from mobile traffic", "Low return rate in the last 30 days"]
+    },
+    {
+      "id": "2",
+      "name": "Azure Run Trainer",
+      "category": "Footwear",
+      "revenue": "$184.90",
+      "reviews": "1,654",
+      "sellThrough": "64%",
+      "location": "Los Angeles",
+      "active": true,
+      "swatch": "linear-gradient(135deg, #5fc5ff, #d7f0ff)",
+      "description": "A versatile trainer with shock-absorbing cushioning for daily runs and gym sessions.",
+      "highlights": ["Strong repeat customer rate", "Best performance in paid social", "High wishlist additions this month"]
+    },
+    {
+      "id": "3",
+      "name": "Canyon Street Jacket",
+      "category": "Outerwear",
+      "revenue": "$312.15",
+      "reviews": "982",
+      "sellThrough": "58%",
+      "location": "Chicago",
+      "active": false,
+      "swatch": "linear-gradient(135deg, #3f4854, #adb8c5)",
+      "description": "A water-resistant city jacket with a structured cut and premium matte finish.",
+      "highlights": ["Excellent average order value", "Needs stronger email support", "Pause due to seasonal inventory rotation"]
+    },
+    {
+      "id": "4",
+      "name": "Tidal Everyday Tote",
+      "category": "Accessories",
+      "revenue": "$129.80",
+      "reviews": "1,208",
+      "sellThrough": "69%",
+      "location": "Houston",
+      "active": true,
+      "swatch": "linear-gradient(135deg, #7fc2a8, #d9f5e8)",
+      "description": "A roomy daily tote with internal dividers, soft-touch handles, and a durable coated finish.",
+      "highlights": ["Performs well in bundles", "Popular with returning customers", "Healthy margin with low support volume"]
+    }
+  ]
+}
