@@ -1,41 +1,55 @@
-import axios from "axios";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "/api";
+const FALLBACK_DATA_URL = "/mock/db.json";
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
+let fallbackCache = null;
 
-const api = axios.create({
-  baseURL: API_BASE_URL,
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+async function fetchJson(url) {
+  const response = await fetch(url);
 
-export const authService = {
-  login: async (email, password) => {
-    const response = await api.post("/auth/login", { email, password });
-    return response.data;
-  },
-};
+  if (!response.ok) {
+    throw new Error(`API request failed with status ${response.status}`);
+  }
 
-export const productService = {
-  getAll: async () => {
-    const response = await api.get("/products");
-    return response.data;
-  },
-  getById: async (id) => {
-    const response = await api.get(`/products/${id}`);
-    return response.data;
-  },
-};
+  return response.json();
+}
 
-export const dashboardService = {
-  getStats: async () => {
-    const response = await api.get("/dashboard/stats");
-    return response.data;
-  },
-  getTransactions: async () => {
-    const response = await api.get("/dashboard/transactions");
-    return response.data;
-  },
-};
+async function getFallbackData() {
+  if (!fallbackCache) {
+    fallbackCache = fetchJson(FALLBACK_DATA_URL);
+  }
 
-export default api;
+  return fallbackCache;
+}
+
+async function request(path, fallbackResolver) {
+  try {
+    return await fetchJson(`${API_BASE_URL}${path}`);
+  } catch (error) {
+    if (!fallbackResolver) {
+      throw error;
+    }
+
+    const fallbackData = await getFallbackData();
+    return fallbackResolver(fallbackData);
+  }
+}
+
+export async function getDashboardData() {
+  return request("/dashboard", (data) => data.dashboard);
+}
+
+export async function getProducts() {
+  return request("/products", (data) => data.products);
+}
+
+export async function getProductById(id) {
+  return request(`/products/${id}`, (data) => {
+    const product = data.products.find((item) => item.id === id);
+
+    if (!product) {
+      throw new Error(`Product ${id} not found`);
+    }
+
+    return product;
+  });
+}
